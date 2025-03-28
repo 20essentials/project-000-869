@@ -1,0 +1,42 @@
+[
+  {
+    "title": "<strong class='orange'>First</strong>, we set up the snapping points",
+    "srcImage": "./assets/flower1.webp",
+    "paragraphs": [
+      "We set the scrolling element, in this case our <strong class='celeste'>HTML</strong> element, to forcibly snap to the Y axis by using the prop <strong class='orange'>scroll-snap-type:</strong> <strong class='celeste'>y mandatory </strong> ",
+      "And then we set section <strong class='celeste'>section</strong> as the snapping elements by using <strong class='orange'>scroll-snap-align: </strong> <strong class='celeste'>start</strong>."
+    ]
+  },
+  {
+    "title": "<strong class='yellow'>Next</strong>, we set up the scrolling animation",
+    "srcImage": "./assets/flower2.webp",
+    "paragraphs": [
+      "We track the <strong class='yellow'>view()</strong> position of the  <strong class='green'>section</strong> elements using the named timeline <strong class='yellow'>view-timeline: --section</strong>. We had previously set the <strong class='yellow'>timeline-scope: --section</strong> up in our HTML <strong class='green'>HTML</strong> element, so we can access it from anywhere in the document.",
+      "We animate the <strong class='green'>.content</strong> children using <strong class='yellow'>animation-timeline: --section</strong>. The <strong class='green'>.content</strong> element will now animate based on its parent <strong class='green'>section</strong>'s position. This is important due to how we're handling the layout in the next section."
+    ]
+  },
+  {
+    "title": "<strong class='celeste'>Then</strong>, we position a fixed layout",
+    "srcImage": "./assets/flower3.webp",
+    "paragraphs": [
+      "We set the <strong class='orange'>.content</strong> elements to <strong class='celeste'>position: fixed</strong>, so they're removed from the normal document flow and stack on top of each other, giving them a solid background, so only one is visible at a time.",
+      "Their parent <strong class='orange'>sections</strong> are positioned as normal in the layer below, taking up space, scroll-snapping, and powering the <strong class='celeste'>animation-timeline</strong>."
+    ]
+  },
+  {
+    "title": "<strong class='red'>Finally</strong>, we create the transition effects",
+    "srcImage": "./assets/flower4.webp",
+    "paragraphs": [
+      "By setting the <strong class='green-dark'>.content</strong> elements to  <strong class='red'>position: fixed</strong>, we can now transition between them without a visible scrolling movement.",
+      "We create a normal delicious <strong class='green-dark'>@keyframe</strong> animation to our liking to transition between them. Check the navigation menu to see different effects."
+    ]
+  },
+  {
+    "title": "<strong class='purple'>Caveats</strong>",
+    "srcImage": "./assets/flower5.webp",
+    "paragraphs": [
+      "Scrolling animations are not <strong class='red-dark'>not</strong> currently available in <strong class='purple'>Firefox</strong>. This demo is using a polyfill.",
+      "The <strong class='red-dark'>blink</strong> effect uses the <strong class='purple'>contrast()</strong>  filter, which modifies the colors of the entire section. Thus, the background is set to black (or white), ensuring that it <strong class='red-dark'>appears</strong>  unchanged during <strong class='purple'>transitions</strong>  due to already being at maximum contrast."
+    ]
+  }
+]
